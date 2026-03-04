@@ -13,4 +13,16 @@ class StockEntry extends Model
         'quantity', //int
         'delivery_reference' //unique
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
+
+
 }

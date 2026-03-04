@@ -43,7 +43,7 @@
                         <td>{{ $entry->delivery_reference }}</td>
                         <td>{{ $entry->created_at->format('Y-m-d H:i') }}</td>
                         <td>
-                            <a href="{{ route('stock_entries.edit', $entry) }}">Edit</a>
+                            <a href="{{ route('stock-entries.edit', $entry) }}">Edit</a>
                         </td>
                     </tr>
                 @endforeach

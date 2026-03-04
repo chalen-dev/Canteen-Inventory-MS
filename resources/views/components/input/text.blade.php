@@ -15,7 +15,7 @@
     @endif
 
     <input
-        type="{{ $text }}"
+        type="{{ $type }}"
         id="{{ $name }}"
         name="{{ $name }}"
         value="{{ $value }}"

@@ -25,7 +25,17 @@ class StockEntryController extends Controller
     {
         $products = Product::all();
         $suppliers = Supplier::all();
-        return view('stock-entries.create', compact('products', 'suppliers'));
+
+        // Prepare options arrays for the dropdowns
+        $productOptions = $products->pluck('product_name', 'id')->toArray();
+
+        $supplierOptions = $suppliers->mapWithKeys(function ($supplier) {
+            // Use supplier_name if exists, otherwise name, fallback to id
+            $displayName = $supplier->supplier_name ?? $supplier->name ?? 'Supplier #' . $supplier->id;
+            return [$supplier->id => $displayName];
+        })->toArray();
+
+        return view('stock-entries.create', compact('productOptions', 'supplierOptions'));
     }
 
     /**

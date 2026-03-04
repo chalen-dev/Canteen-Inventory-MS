@@ -27,7 +27,8 @@
 </head>
 <body class="bg-page h-full antialiased">
 <div>
-    <!--Header-->
+    <x-components.partials.header/>
+
     <main class="flex-1 p-5">
         @yield('content')
     </main>
